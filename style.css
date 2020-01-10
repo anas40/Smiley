@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 1px solid gold;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section div{
+    border: 2px solid red;
+    border-radius: 20%;
+    height: 30vh;
+    width: 40vh;
+    padding: 40px;
+    transition: box-shadow 1s;
+    box-shadow: 20px 0 18px -10px blue, -20px 0 18px -10px blue;
+    animation: shiver 1s linear infinite 3s;
+    }
+section div:hover{
+    transition: box-shadow .3s;
+    box-shadow:  0 0 12px 1px ,0 -40px 8px -4px green;
+    animation: smile 3s linear infinite 1.5s;
+}
+
+.left-eye{    
+    animation: rotate 1.2s linear infinite 1s;
+    transform-origin: 16% 24%;
+}
+
+.right-eye{
+    animation: rotate 1.5s linear infinite 1s;
+    transform-origin: 84% 24%;
+    
+}
+#mouth{
+    animation: happy 1s linear forwards 1s;
+    transform-origin: 49% 76%;
+}
+div:hover .left-eye,div:hover .right-eye,div:hover #mouth{
+    animation: none;
+}
+@keyframes rotate{
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes happy{
+    100%{
+        transform: rotateZ(180deg) translateY(-10%);
+    }
+}
+@keyframes smile{
+    25%{
+        transform: rotateZ(-5deg) translateX(-45px);
+    }
+    50%{
+        tranform:rotateZ(0deg) translateX(0);
+    }
+    75%{
+        transform: rotateZ(5deg) translateX(25px);
+    }
+}
+@keyframes shiver{
+    20%{
+        transform: rotateY(20deg) translateY(20px);
+    }
+    80%{
+        transform: rotateY(-20deg) ;
+    }
+}
